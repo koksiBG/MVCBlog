@@ -1,32 +1,32 @@
 ﻿@model MVCBlog.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Управление";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    <h4>Промяна на настройките на профила Ви</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>Парола:</dt>
         <dd>
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Промяна на паролата", "ChangePassword")
             }
             else
             {
-                @Html.ActionLink("Create", "SetPassword")
+                @Html.ActionLink("Нова парола", "SetPassword")
             }
             ]
         </dd>
-        <dt>External Logins:</dt>
+        <dt>Вход с Външен акаунт:</dt>
         <dd>
             @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
+            @Html.ActionLink("Управление", "ManageLogins") ]
         </dd>
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
@@ -56,11 +56,10 @@
                 }
             </dd>
         *@
-        <dt>Two-Factor Authentication:</dt>
+        <dt>Двустъпкова автентификация:</dt>
         <dd>
             <p>
-                There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication.
+                Вашият акаунт не е настроен за двустъпкова автентификация!
             </p>
             @*@if (Model.TwoFactor)
                 {

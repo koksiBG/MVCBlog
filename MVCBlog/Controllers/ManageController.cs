@@ -55,12 +55,12 @@ namespace MVCBlog.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
-                : message == ManageMessageId.Error ? "An error has occurred."
-                : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                message == ManageMessageId.ChangePasswordSuccess ? "Вашата парола беше сменена."
+                : message == ManageMessageId.SetPasswordSuccess ? "Вашата парола вече е създадена."
+                : message == ManageMessageId.SetTwoFactorSuccess ? "Вашият акаунт вече е настроен със двустъпкова автентикация."
+                : message == ManageMessageId.Error ? "Възникна грешка."
+                : message == ManageMessageId.AddPhoneSuccess ? "Вашият тел. номер беше добавен към акаунта Ви."
+                : message == ManageMessageId.RemovePhoneSuccess ? "Тел. Ви номер беше премахнат от акаунта Ви."
                 : "";
 
             var userId = User.Identity.GetUserId();

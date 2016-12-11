@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MVCBlog.Models;
 
+
 namespace MVCBlog.Controllers
 {
     [Authorize]
@@ -151,7 +152,13 @@ namespace MVCBlog.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.UserName,
+                    BirthDate = model.BirthDate,
+                    Gender = model.Gender,
+                    Email = model.Email,
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
